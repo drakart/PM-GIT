@@ -3,12 +3,12 @@
  git config --global user.email '사용자이메일'
 
 2. git-prac 폴더를 git이 관리하는 폴더로 지정
- git init
+  git init
 
-3. 기본으로 생성되는 master 브랜치에서 main 브랜치로 변경
+3. 기본으로 생성되는 marster 브랜치에서 main 브랜치로 변경
  git checkout -b main : main브랜치를 생성하고 해당 브랜치로 이동
- git branch -M main : 기본브랜치를 main브랜치로 지정
- git status : 상태확인
+ git brach -M main : 기본브랜치를 main브랜치로 지정
+ git status  : 상태확인
 
 4. 파일을 생성하고, add commit 하기
  git add <파일명> : 파일을 staging area에 추가
@@ -18,8 +18,9 @@
  git log : commit 내역 확인
 
 5. 특정 commit 지점으로 되돌리기
-  1. git log 또는 git reflog를 통해 commit id 확인
-  git reset --soft<commit> : commit 내역을 되돌리고, commit만 취소(staging area)
-  git reset --mixed<commit> : commit 내역을 되돌리고 staging까지 취소
-  --------------- 파일 영향 x -----------------
-  git reset --hard<commit> : commit 내역을 되돌리고 파일을 rollback
+1. git log 또는 git reflog를 통해 commit id 확인
+ git reset --soft<commit> : commit 내역을 되돌리고, commit만 취소(staging area)
+ git reset --mixed<commit> : commit 내역을 되돌리고 staging까지 취소
+-----------------------------파일 영향 X ---------------------------------
+ git reset --hard<commit> : commit 내역을 되돌리고 파일을 rollback
+ git revert<commit> : 지정한 commit으로 인해 발생한 변경을 되돌리고, 새로운 commit을 생성해 commit에 추가
